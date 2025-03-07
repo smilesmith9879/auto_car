@@ -1,0 +1,760 @@
+/* Sheikah Technology Theme - Inspired by Tears of the Kingdom */
+
+:root {
+    --sheikah-blue: #4fc3f7;
+    --sheikah-blue-glow: #4fc3f780;
+    --sheikah-dark: #263238;
+    --sheikah-light: #eceff1;
+    --sheikah-accent: #ff9800;
+    --panel-bg: rgba(38, 50, 56, 0.85);
+    --panel-border: 1px solid var(--sheikah-blue);
+    --panel-shadow: 0 0 15px var(--sheikah-blue-glow);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #000;
+    background-image: url('../img/sheikah-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--sheikah-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: var(--panel-border);
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.sheikah-eye {
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/sheikah-eye.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 5px var(--sheikah-blue));
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--sheikah-blue);
+    text-shadow: 0 0 10px var(--sheikah-blue-glow);
+}
+
+.status-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: var(--sheikah-light);
+}
+
+.status-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.battery-indicator {
+    width: 50px;
+    height: 15px;
+    border: 1px solid var(--sheikah-blue);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.battery-level {
+    height: 100%;
+    background-color: var(--sheikah-blue);
+    box-shadow: 0 0 5px var(--sheikah-blue-glow);
+}
+
+.connection-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #f44336;
+}
+
+.connection-indicator.connected {
+    background-color: #4caf50;
+    box-shadow: 0 0 5px #4caf50;
+}
+
+/* Main Content */
+main {
+    margin-bottom: 30px;
+}
+
+.panel-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Panel Styles */
+.panel {
+    background-color: var(--panel-bg);
+    border: var(--panel-border);
+    border-radius: 8px;
+    box-shadow: var(--panel-shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--sheikah-blue), transparent);
+}
+
+.panel-header {
+    padding: 15px;
+    border-bottom: var(--panel-border);
+    position: relative;
+}
+
+.panel-header h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--sheikah-blue);
+    text-shadow: 0 0 5px var(--sheikah-blue-glow);
+}
+
+.panel-content {
+    padding: 20px;
+}
+
+/* Control Panel */
+.control-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--sheikah-blue);
+    background-color: rgba(79, 195, 247, 0.1);
+    color: var(--sheikah-blue);
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background-color: rgba(79, 195, 247, 0.3);
+    box-shadow: 0 0 10px var(--sheikah-blue-glow);
+}
+
+.control-btn:active {
+    background-color: rgba(79, 195, 247, 0.5);
+    transform: scale(0.95);
+}
+
+.control-btn.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.control-btn.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.control-btn.center {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    border-color: #f44336;
+}
+
+.control-btn.center:hover {
+    background-color: rgba(244, 67, 54, 0.4);
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
+.control-btn.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.control-btn.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.speed-control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.speed-control label {
+    font-size: 0.9rem;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(79, 195, 247, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--sheikah-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--sheikah-blue-glow);
+}
+
+.joystick-container {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joystick-base {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(79, 195, 247, 0.1);
+    border: 2px solid var(--sheikah-blue);
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--sheikah-blue-glow);
+}
+
+.joystick-base::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--sheikah-blue);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px var(--sheikah-blue-glow);
+    pointer-events: none;
+}
+
+.joystick-handle {
+    width: 50px;
+    height: 50px;
+    background: var(--sheikah-blue);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--sheikah-blue-glow);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+}
+
+.joystick-handle:hover {
+    box-shadow: 0 0 20px var(--sheikah-blue-glow);
+}
+
+/* Camera Panel */
+.camera-feed {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: var(--panel-border);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.camera-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sheikah-blue);
+    font-size: 0.9rem;
+}
+
+#camera-stream {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.camera-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gimbal-control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Map Panel */
+.map-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: var(--panel-border);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.map-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sheikah-blue);
+    font-size: 0.9rem;
+}
+
+#slam-map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.map-controls, .location-naming, .navigation-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.map-btn, #name-location, #navigate-btn {
+    padding: 8px 12px;
+    background-color: rgba(79, 195, 247, 0.1);
+    border: 1px solid var(--sheikah-blue);
+    color: var(--sheikah-blue);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.map-btn:hover, #name-location:hover, #navigate-btn:hover {
+    background-color: rgba(79, 195, 247, 0.3);
+    box-shadow: 0 0 5px var(--sheikah-blue-glow);
+}
+
+input[type="text"], select {
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--sheikah-blue);
+    color: var(--sheikah-light);
+    border-radius: 5px;
+    outline: none;
+    flex: 2;
+}
+
+input[type="text"]:focus, select:focus {
+    box-shadow: 0 0 5px var(--sheikah-blue-glow);
+}
+
+/* Voice Panel */
+.voice-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.voice-visualization {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: var(--panel-border);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.voice-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.voice-controls {
+    margin: 10px 0;
+}
+
+.voice-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(79, 195, 247, 0.1);
+    border: 1px solid var(--sheikah-blue);
+    color: var(--sheikah-blue);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voice-btn:hover {
+    background-color: rgba(79, 195, 247, 0.3);
+    box-shadow: 0 0 10px var(--sheikah-blue-glow);
+}
+
+.voice-btn:active {
+    background-color: rgba(79, 195, 247, 0.5);
+    transform: scale(0.95);
+}
+
+.voice-transcript {
+    width: 100%;
+    min-height: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: var(--panel-border);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    border-top: var(--panel-border);
+    padding-top: 20px;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--sheikah-light);
+    opacity: 0.7;
+}
+
+/* Mobile-First Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .status-bar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .panel-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Reorder panels for mobile */
+    #camera-panel {
+        order: 1;
+    }
+
+    #control-panel {
+        order: 2;
+    }
+
+    #voice-panel {
+        order: 3;
+    }
+
+    #map-panel {
+        order: 4;
+    }
+
+    /* Optimize camera panel for mobile */
+    .camera-feed {
+        height: 40vh;
+        margin-bottom: 10px;
+    }
+
+    .camera-controls {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .gimbal-control {
+        flex: 1;
+        margin: 0 5px;
+    }
+
+    /* Optimize control pad for mobile */
+    .control-pad {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+
+    .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    /* Optimize voice controls for mobile */
+    .voice-interface {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .voice-btn {
+        width: 60px;
+        height: 60px;
+        margin: 0 10px;
+    }
+
+    .voice-visualization {
+        flex: 1;
+        height: 40px;
+    }
+
+    .voice-transcript {
+        display: none;
+    }
+
+    /* Hide map panel by default on mobile */
+    #map-panel {
+        display: none;
+    }
+
+    /* Add floating map toggle button */
+    .map-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--panel-bg);
+        border: var(--panel-border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--sheikah-blue);
+        font-size: 24px;
+        box-shadow: var(--panel-shadow);
+        z-index: 1000;
+    }
+}
+
+/* Sheikah Rune Animation */
+@keyframes runeGlow {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.panel::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/sheikah-rune.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    animation: runeGlow 3s infinite;
+}
+
+/* Zelda-themed Decorative Elements */
+.panel {
+    position: relative;
+}
+
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/triforce.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    animation: float 3s infinite ease-in-out;
+}
+
+.camera-placeholder::before,
+.map-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/master-sword.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    animation: swordFloat 3s infinite ease-in-out;
+}
+
+.panel-header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-image: url('../img/sheikah-rune.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    animation: runeGlow 2s infinite ease-in-out;
+}
+
+@keyframes swordFloat {
+    0% { transform: translateY(0) rotate(-45deg); }
+    50% { transform: translateY(-10px) rotate(-30deg); }
+    100% { transform: translateY(0) rotate(-45deg); }
+}
+
+@keyframes runeGlow {
+    0% { opacity: 0.4; transform: translateY(-50%) scale(0.95); }
+    50% { opacity: 0.8; transform: translateY(-50%) scale(1.05); }
+    100% { opacity: 0.4; transform: translateY(-50%) scale(0.95); }
+}
+
+.status-item::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/navi-fairy.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    animation: float 2s infinite ease-in-out;
+}
+
+.controls-panel::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    background-image: url('../img/korok.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-5px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+.panel::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/sheikah-rune.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    animation: runeGlow 3s infinite;
+}

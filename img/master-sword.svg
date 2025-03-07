@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200">
+  <!-- Blade -->
+  <path d="M50 10 L45 40 L45 120 L50 130 L55 120 L55 40 L50 10Z" fill="#e0e0e0" stroke="#a0a0a0" stroke-width="1"/>
+  
+  <!-- Blade Center Line -->
+  <path d="M50 10 L50 130" stroke="#a0a0a0" stroke-width="1"/>
+  
+  <!-- Hilt Guard -->
+  <path d="M30 120 L70 120 L65 130 L35 130 L30 120Z" fill="#4fc3f7" stroke="#0288d1" stroke-width="1"/>
+  
+  <!-- Hilt -->
+  <path d="M45 130 L45 170 L55 170 L55 130 Z" fill="#4f4f4f" stroke="#333" stroke-width="1"/>
+  
+  <!-- Pommel -->
+  <path d="M40 170 L60 170 L60 180 L40 180 Z" fill="#4fc3f7" stroke="#0288d1" stroke-width="1"/>
+  
+  <!-- Triforce Symbol -->
+  <path d="M50 140 L46 147 L54 147 Z" fill="#ffeb3b" stroke="#fbc02d" stroke-width="0.5"/>
+  <path d="M47 148 L43 155 L51 155 Z" fill="#ffeb3b" stroke="#fbc02d" stroke-width="0.5"/>
+  <path d="M53 148 L49 155 L57 155 Z" fill="#ffeb3b" stroke="#fbc02d" stroke-width="0.5"/>
+  
+  <!-- Glow Effect -->
+  <path d="M50 10 L45 40 L45 120 L50 130 L55 120 L55 40 L50 10Z" fill="none" stroke="#4fc3f7" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" />
+  </path>
+</svg>

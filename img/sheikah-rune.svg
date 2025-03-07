@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <!-- Sheikah Rune Symbol -->
+  <circle cx="25" cy="25" r="20" fill="none" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  
+  <!-- Inner Rune Pattern -->
+  <circle cx="25" cy="25" r="10" fill="none" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  
+  <!-- Connecting Lines -->
+  <line x1="25" y1="15" x2="25" y2="5" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="25" y1="35" x2="25" y2="45" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="15" y1="25" x2="5" y2="25" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="35" y1="25" x2="45" y2="25" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  
+  <!-- Diagonal Lines -->
+  <line x1="18.5" y1="18.5" x2="12" y2="12" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="31.5" y1="18.5" x2="38" y2="12" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="18.5" y1="31.5" x2="12" y2="38" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  <line x1="31.5" y1="31.5" x2="38" y2="38" stroke="#4fc3f7" stroke-width="1" stroke-opacity="0.7" />
+  
+  <!-- Ancient Rune Symbols -->
+  <path d="M24 20 L26 20 L26 30 L24 30 Z" fill="#4fc3f7" fill-opacity="0.7" />
+  <path d="M20 24 L30 24 L30 26 L20 26 Z" fill="#4fc3f7" fill-opacity="0.7" />
+  
+  <!-- Glow Animation -->
+  <animate attributeName="stroke-opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
+</svg>

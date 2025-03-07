@@ -1,0 +1,23 @@
+AI Four-Wheel Drive Car Comprehensive Solution
+March 3, 2025 – Second Edition
+1. Functional Overview
+This solution is based on the Raspberry Pi 5, combined with the official Raspberry Pi camera, a four-wheel-drive chassis, and PCA9685 servo control, to create an AI-powered car that supports web remote control, visual SLAM, autonomous navigation, and voice interaction.
+✅ Web Control: Control the car’s movement using a simulated joystick on the web, adjust the camera gimbal angles, and view the camera feed in real time.
+✅ Camera Gimbal Control: The servo supports up, down, left, and right rotation, controlled via a slider on the web interface.
+✅ Real-time Video Streaming: Based on WebRTC for low-latency camera feed transmission.
+✅ Remote API Control: Use Flask API + WebSocket for remote control of the car and camera.
+✅ Map Modeling: Construct a visual SLAM map of the car’s environment using ORB-SLAM3.
+✅ Map Partitioning & Naming: Users can manually name room areas on the web (e.g., "Living Room", "Bedroom").
+✅ Path Planning & Autonomous Navigation: Plan the optimal path based on ORB-SLAM3 trajectories & A algorithm*.
+✅ Voice Interaction: Utilize Whisper + Ollama + DeepSeekR1 1.7B for local voice recognition & interaction.
+
+2. Hardware Structure
+Component	Recommended Model	Function Description
+Computing Unit	Raspberry Pi 5	Controls car movement, SLAM, voice interaction, and web control
+Camera	Official Raspberry Pi Camera	Used for SLAM mapping, object recognition, and supports 1080P video streaming
+Car Chassis	LOBOT Four-Wheel Drive Chassis	Supports forward, backward, left & right turns, and strafing
+Motor Driver	PCA9685 + L298N	Controls four motors via I2C, supports PWM speed adjustment
+Servo Gimbal	MG996R + PCA9685	Supports 180° horizontal rotation, 90° vertical rotation
+Voice Processing	ReSpeaker 2-Mic / 4-Mic	Used for voice recognition and command control
+IMU	MPU6050	Motion detection, enhances SLAM accuracy
+Power System	18650 Lithium Battery + BMS	Provides stable power to Raspberry Pi & the car

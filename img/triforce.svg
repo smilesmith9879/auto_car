@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Main Triforce -->
+  <g>
+    <!-- Top Triangle -->
+    <path d="M50 10 L20 65 L80 65 Z" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Bottom Left Triangle -->
+    <path d="M20 65 L35 90 L50 65 Z" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="0.5s" />
+    </path>
+    
+    <!-- Bottom Right Triangle -->
+    <path d="M50 65 L65 90 L80 65 Z" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1s" />
+    </path>
+  </g>
+  
+  <!-- Glow Effect -->
+  <g>
+    <path d="M50 10 L20 65 L80 65 Z" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M20 65 L35 90 L50 65 Z" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" begin="1s" />
+    </path>
+    <path d="M50 65 L65 90 L80 65 Z" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" begin="2s" />
+    </path>
+  </g>
+</svg>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Sheikah AI Car Control</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="sheikah-eye"></div>
+                <h1>Sheikah AI Car Control</h1>
+            </div>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">Battery</span>
+                    <div class="status-value">
+                        <div class="battery-indicator">
+                            <div class="battery-level" style="width: 75%;"></div>
+                        </div>
+                        <span>75%</span>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Connection</span>
+                    <div class="status-value">
+                        <div class="connection-indicator connected"></div>
+                        <span>Connected</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="panel-container">
+                <!-- Camera Panel - First for mobile view -->
+                <section class="panel" id="camera-panel">
+                    <div class="panel-header">
+                        <h2>Camera View</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="camera-feed">
+                            <div class="camera-placeholder">Camera Feed Loading...</div>
+                            <video id="camera-stream" autoplay playsinline></video>
+                        </div>
+                        <div class="camera-controls">
+                            <div class="gimbal-control">
+                                <label for="pan-slider">Pan</label>
+                                <input type="range" id="pan-slider" min="-90" max="90" value="0">
+                                <span id="pan-value">0°</span>
+                            </div>
+                            <div class="gimbal-control">
+                                <label for="tilt-slider">Tilt</label>
+                                <input type="range" id="tilt-slider" min="-45" max="45" value="0">
+                                <span id="tilt-value">0°</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Control Panel - Second for mobile view -->
+                <section class="panel" id="control-panel">
+                    <div class="panel-header">
+                        <h2>Movement Control</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div id="joystick-container" class="joystick-container">
+                            <!-- Virtual joystick will be created here by JavaScript -->
+                        </div>
+                        <div class="speed-control">
+                            <label for="speed-slider">Speed</label>
+                            <input type="range" id="speed-slider" min="0" max="100" value="50">
+                            <span id="speed-value">50%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Voice Panel - Third for mobile view -->
+                <section class="panel" id="voice-panel">
+                    <div class="panel-header">
+                        <h2>Voice Interaction</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="voice-interface">
+                            <div class="voice-visualization">
+                                <div class="voice-wave"></div>
+                            </div>
+                            <div class="voice-controls">
+                                <button id="voice-btn" class="voice-btn">
+                                    <span class="voice-icon">🎤</span>
+                                </button>
+                            </div>
+                            <div class="voice-transcript">
+                                <p id="voice-output">Press the microphone to speak...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map Panel - Hidden by default on mobile -->
+                <section class="panel" id="map-panel">
+                    <div class="panel-header">
+                        <h2>Navigation Map</h2>
+                    </div>
+                    <div class="panel-content">
+                        <div class="map-container">
+                            <div class="map-placeholder">Map Loading...</div>
+                            <div id="slam-map"></div>
+                        </div>
+                        <div class="map-controls">
+                            <button class="map-btn" id="start-mapping">Start Mapping</button>
+                            <button class="map-btn" id="save-map">Save Map</button>
+                            <button class="map-btn" id="load-map">Load Map</button>
+                        </div>
+                        <div class="location-naming">
+                            <input type="text" id="location-name" placeholder="Location Name">
+                            <button id="name-location">Name Area</button>
+                        </div>
+                        <div class="navigation-controls">
+                            <select id="destination-select">
+                                <option value="">Select Destination</option>
+                                <option value="living-room">Living Room</option>
+                                <option value="kitchen">Kitchen</option>
+                                <option value="bedroom">Bedroom</option>
+                            </select>
+                            <button id="navigate-btn">Navigate</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Map toggle button for mobile -->
+        <button class="map-toggle" id="map-toggle">🗺️</button>
+
+        <footer>
+            <div class="footer-content">
+                <p>AI Four-Wheel Drive Car Comprehensive Solution © 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/webrtc.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="js/mobile.js"></script>
+</body>
+</html>

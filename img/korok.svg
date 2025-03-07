@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <!-- Korok Body -->
+  <ellipse cx="50" cy="70" rx="20" ry="25" fill="#8d6e63" stroke="#5d4037" stroke-width="1">
+    <animate attributeName="transform" attributeType="XML" type="rotate" from="-5 50 70" to="5 50 70" dur="3s" repeatCount="indefinite" additive="sum" />
+  </ellipse>
+  
+  <!-- Leaf Mask -->
+  <path d="M30 45 Q50 30 70 45 L65 65 Q50 55 35 65 Z" fill="#81c784" stroke="#4caf50" stroke-width="1">
+    <animate attributeName="transform" attributeType="XML" type="rotate" from="-3 50 50" to="3 50 50" dur="2.5s" repeatCount="indefinite" additive="sum" />
+  </path>
+  
+  <!-- Eyes -->
+  <circle cx="42" cy="50" r="3" fill="#000000">
+    <animate attributeName="r" values="3;2.5;3" dur="4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="58" cy="50" r="3" fill="#000000">
+    <animate attributeName="r" values="3;2.5;3" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Arms -->
+  <path d="M30 65 Q20 70 15 60" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round">
+    <animate attributeName="d" values="M30 65 Q20 70 15 60;M30 65 Q20 65 15 55;M30 65 Q20 70 15 60" dur="3s" repeatCount="indefinite" />
+  </path>
+  <path d="M70 65 Q80 70 85 60" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round">
+    <animate attributeName="d" values="M70 65 Q80 70 85 60;M70 65 Q80 65 85 55;M70 65 Q80 70 85 60" dur="3s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Legs -->
+  <path d="M40 95 Q35 105 30 105" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round">
+    <animate attributeName="d" values="M40 95 Q35 105 30 105;M40 95 Q35 100 30 100;M40 95 Q35 105 30 105" dur="3s" repeatCount="indefinite" />
+  </path>
+  <path d="M60 95 Q65 105 70 105" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round">
+    <animate attributeName="d" values="M60 95 Q65 105 70 105;M60 95 Q65 100 70 100;M60 95 Q65 105 70 105" dur="3s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Maracas (seed shaker) -->
+  <ellipse cx="15" cy="55" rx="5" ry="8" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1" transform="rotate(-30 15 55)">
+    <animate attributeName="transform" values="rotate(-25 15 55);rotate(-35 15 55);rotate(-25 15 55)" dur="0.5s" repeatCount="indefinite" />
+  </ellipse>
+  
+  <!-- Sparkles -->
+  <g>
+    <circle cx="15" cy="45" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.2s" />
+    </circle>
+    <circle cx="20" cy="50" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.7s" />
+    </circle>
+    <circle cx="10" cy="50" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="1.2s" />
+    </circle>
+  </g>
+  
+  <!-- "Ya-ha-ha!" Text -->
+  <text x="70" y="40" font-family="Arial" font-size="8" fill="#4caf50" opacity="0">
+    Ya-ha-ha!
+    <animate attributeName="opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite" begin="1s" />
+  </text>
+</svg>
